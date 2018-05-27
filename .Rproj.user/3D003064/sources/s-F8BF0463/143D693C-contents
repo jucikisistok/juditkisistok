@@ -1,0 +1,163 @@
+# Site settings
+baseurl = "https://www.example.com"
+languageCode = "en-us"
+title = "Highlights"
+theme = "hugo-highlights-theme"
+
+# Enter your tracking code to enable Google analytics
+googleAnalytics = ""
+
+[params]
+
+  # You can use Markdown for urls [text](//domain.tld/source)
+  #
+  # All icons using Fontawesom's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
+  # for more icons.
+
+  # To provide more meta data for search engings feel free to add a few informations.
+  # This lines will be inserted as meta tags.
+  name = "Judit Kisistók"
+  description = "Your Description"
+
+  # For a static site it's not possible to provide a contact form. The contact form uses
+  # www.formspree.io as a proxy. The form makes a Post request to their servers to send an email
+  # Visitors can send up to a 1000 emails each month
+  #
+  # How to setup formspree
+  #
+  # - set your email address under 'email' below
+  # - upload the generated site to your server
+  # - send a dummy email to yourself to confirm your account
+  # - click the confirmation link in the email from www.formspree.io
+  # - That's all. Enjoy mailing!
+  email = "judit.kisistok@gmail.com"
+
+  # If this param is set to true, every section gets an own background image (located at static/images)
+  # to change the image you could use the param picture on every section.
+  # If it's disabled you could change the background to overwrite the bg.png and overlay.png to set the background.
+  backgroundpersection = true
+
+  # hero Section
+  [params.hero]
+    type = "hero"
+    title = "Hi, my name is Judit"
+    description = "I am a bioinformatician interested in machine learning and data analysis"
+    buttontext = "begin"
+
+  # about section
+  [[params.block]]
+    id = "about"
+    type = "custom"
+    title = "Me in a nutshell"
+    description = "I am a bioengineer-turned-bioinformatician teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I'm a huge fan of good plots, strong coffee, weird movies and terrible puns."
+    buttontext = "next"
+    # the picture is storead at static/images/
+    picture = "pic01.jpg"
+
+  # skill section
+  [[params.block]]
+    id = "skills"
+    type = "list"
+    title = "My toolbox"
+    description = "These are some of the wonderful things I have experience in."
+    buttontext = "next"
+    # the picture is storead at static/images/
+    picture = "pic02.jpg"
+
+    [[params.block.item]]
+      icon = "fa-code"
+      title = "Python programming"
+
+    [[params.block.item]]
+      icon = "fa-code"
+      title = "R & tidyverse"
+
+    [[params.block.item]]
+      icon = "fa-pencil"
+      title = "Latex for scientific writing"
+
+    [[params.block.item]]
+      icon = "fa-terminal"
+      title = "Plink for analyzing genome data"
+      
+      [[params.block.item]]
+      icon = "fa-tree"
+      title = "Mega for building phylogenetic trees"
+      
+      [[params.block.item]]
+      icon = "fa-coffee"
+      title = "Teaching"
+
+  [[params.block]]
+    id = "projects"
+    # to make custom section copy <theme>/layouts/partials/text.html to /layouts/partials/custom.html and edit it according to your needs.
+    type = "text"
+    title = "Cool stuff I've done"
+    description = "<b>Being a teaching assistant</b><br/>I had a fantastic time teaching 20+ lovely molecular biology BSc students in the fall of 2017 and spring of 2018. The fall course involved python programming and using online bioinformatics tools (like BLAST), while the spring course focused on statistics and R. To help my students understand the concepts more, I prepared extra materials for them that you can see here:<br /><a href='https://github.com/jucikisistok/biap' target='_blank'>Bioinformatics and Programming course notes</a><br /><a href='https://gaos.netlify.com/' target='_blank'>Genome Analysis and Statistics notebooks</a><br /><br /><b>muggerNN</b><br />As part of our Master's thesis, my dear friend and thesis partner, Noor and me implemented a command-line tool to predict protein secondary structure that we lovingly called muggerNN (working title). Not only did we get pretty good at implementing different kinds of neural networks in Keras (from simple one-layer to deep convolutional nets), we also learnt a lot about data wrangling, cluster computing, patience, teamwork and time management."
+#    # the picture is storead at static/images/
+    picture = "pic04.jpg"
+  
+  # infos section
+  #[[params.block]]
+   # id = "infos"
+    #type = "text"
+    #title = "Kind words"
+    #description = "These are some nice things my previous students wrote about me (no bribes involved). <br/><br /><em>'Judit has been an excellent TA - she has always been good at communicating what we couldn't understand from the lectures and helping us with tasks and especially R.'</em><br /><br /><em>[The best thing about the course was] 'Judit! Her Kahoots and way to teach has been so good.'</em><br /><br /><em>'Judit is a lovely lady who under no circumstances should leave the position of a TA.'</em>"
+    # the picture is storead at static/images/
+    #picture = "pic03.jpg"
+
+#  # custom section
+#  [[params.block]]
+#    id = "important"
+#    # to make custom section copy <theme>/layouts/partials/text.html to /layouts/partials/custom.html and edit it according to your needs.
+#    type = "custom"
+#    title = "Don't forget"
+#    description = "Curabitur massa ante, semper at massa et, semper pellentesque velit. Duis tempor est nisi, a gravida risus malesuada eget. Nunc rutrum arcu laoreet mauris sodales vehicula. Nunc iaculis felis ac dui egestas, vel ullamcorper tellus bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia sem porttitor, fringilla metus at, convallis quam. Integer convallis a justo non pellentesque."
+#    # the picture is storead at static/images/
+#    picture = "pic04.jpg"
+
+  # contact form
+  [[params.block]]
+    id = "contact"
+    type = "contact"
+    title = "Get in Touch with me"
+    description = "or check out my <a href='https://www.linkedin.com/in/judit-kisistok/' target='_blank'>Linkedin page</a>"
+    picture = "pic05.jpg"
+
+    [params.block.form]
+      name = "Name"
+      email = "Your Email"
+      message = "Your Message"
+      buttontext = "send message"
+
+  # footer section
+  # this section includes last block and social icons
+
+  [params.footer]
+    enable = true
+
+    # social icons
+    [params.footer.social_list]
+      enable = true
+
+      [[params.footer.social]]
+        title = "Linkedin"
+        icon = "fa-linkedin"
+        link = "https://www.linkedin.com/in/judit-kisistok/"
+
+      [[params.footer.social]]
+        title = "Email"
+        icon = "fa-envelope"
+        link = "mailto:judit.kisistok@gmail.com"
+
+    # copyright
+    #[params.footer.copyright.notice]
+
+      [[params.footer.copyright.notice]]
+        text = "© Judit Kisistók"
+
+      [[params.footer.copyright.notice]]
+        text = "Design: [HTML5UP](//html5up.net)"
+
+      [[params.footer.copyright.notice]]
+        text = "Demo Images: [Unsplash](//unsplash.com/)"

@@ -1,0 +1,21 @@
+"0","blogdown::build_site()"
+"2","Rendering content/post/2015-07-23-r-rmarkdown.Rmd
+"
+"2","During startup - Warning messages:
+1: Setting LC_CTYPE failed, using ""C"" 
+2: Setting LC_COLLATE failed, using ""C"" 
+3: Setting LC_TIME failed, using ""C"" 
+4: Setting LC_MESSAGES failed, using ""C"" 
+5: Setting LC_MONETARY failed, using ""C"" 
+"
+"2","Error: While parsing config: (96, 20): unescaped control character U+000A
+"
+"2","Error: While parsing config: (96, 20): unescaped control character U+000A
+"
+"0","blogdown::serve_site()"
+"2","Error: While parsing config: (96, 20): unescaped control character U+000A
+"
+"2","Serving the directory /Users/juci/Documents/GitHub/juditkisistok at http://127.0.0.1:6056
+"
+"2","To stop the server, run servr::daemon_stop(""4323901160"") or restart your R session
+"
