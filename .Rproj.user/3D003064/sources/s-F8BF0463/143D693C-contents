@@ -1,7 +1,7 @@
 # Site settings
 baseurl = "//www.judit.co"
 languageCode = "en-us"
-title = "Highlights"
+title = "Judit Kisistók"
 theme = "hugo-highlights-theme"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
