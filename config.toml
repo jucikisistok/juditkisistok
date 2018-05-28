@@ -1,8 +1,9 @@
 # Site settings
-baseurl = "https://www.judit.co/"
+baseurl = "https://www.judit.co"
 languageCode = "en-us"
 title = "Highlights"
 theme = "hugo-highlights-theme"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 # Enter your tracking code to enable Google analytics
 googleAnalytics = ""
