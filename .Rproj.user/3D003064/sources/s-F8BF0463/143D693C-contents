@@ -161,4 +161,4 @@ googleAnalytics = ""
         text = "Design: [HTML5UP](//html5up.net)"
 
       [[params.footer.copyright.notice]]
-        text = "Demo Images: [Unsplash](//unsplash.com/)"
+        text = "Photo by [Federico Beccari](//unsplash.com/@federize) on [Unsplash](//unsplash.com/)"
