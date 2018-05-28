@@ -6,7 +6,7 @@ theme = "hugo-highlights-theme"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 # Enter your tracking code to enable Google analytics
-googleAnalytics = ""
+googleAnalytics = "UA-119946999-2"
 
 [params]
 

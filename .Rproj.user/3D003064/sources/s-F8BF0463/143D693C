@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "555535119",
+    "hash" : "0",
     "id" : "143D693C",
-    "lastKnownWriteTime" : 1527505428,
-    "last_content_update" : 1527505428809,
+    "lastKnownWriteTime" : 1527508112,
+    "last_content_update" : 1527508112747,
     "path" : "~/Documents/GitHub/juditkisistok/config.toml",
     "project_path" : "config.toml",
     "properties" : {
-        "cursorPosition" : "163,44",
-        "scrollLine" : "133"
+        "cursorPosition" : "8,33",
+        "scrollLine" : "0"
     },
     "relative_order" : 1,
     "source_on_save" : false,
