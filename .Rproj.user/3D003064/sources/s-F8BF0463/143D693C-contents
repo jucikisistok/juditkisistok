@@ -42,7 +42,7 @@ googleAnalytics = ""
     type = "hero"
     title = "Hi, my name is Judit"
     description = "I am a bioinformatician interested in machine learning and data analysis"
-    buttontext = "begin"
+    buttontext = "get to know me"
 
   # about section
   [[params.block]]

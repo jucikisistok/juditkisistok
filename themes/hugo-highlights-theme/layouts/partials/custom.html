@@ -1,0 +1,18 @@
+{{ print "<!-- " .block.id " -->" | safeHTML }}
+<section id="{{.block.id}}" class="main special">
+  <div class="container">
+    {{ if eq .params.backgroundpersection true }}
+      <span class="image fit primary"><img src="images/{{ with .block.picture }}{{ . }}{{ end }}" alt="" /></span>
+    {{ end }}
+    <div class="content">
+      <header class="major">
+        <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
+      </header>
+        <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/29354308_10215116520848305_4377402653395945396_o.jpg?_nc_cat=0&oh=8d0cf38d8578e4b617761594b297423d&oe=5B78CD2E" width = 50%;/>
+      <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
+    </div>
+    {{ if .next }}
+      <a href="#{{.next.id}}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>
+    {{ end }}
+  </div>
+</section>
