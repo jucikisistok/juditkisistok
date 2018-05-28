@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://www.judit.co"
+baseurl = "//www.judit.co"
 languageCode = "en-us"
 title = "Highlights"
 theme = "hugo-highlights-theme"
