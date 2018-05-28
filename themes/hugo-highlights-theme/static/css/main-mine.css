@@ -1317,6 +1317,12 @@
 		background-repeat: repeat,						none;
 		background-size: auto,						cover;
 	}
+a {
+    color: #9C231E !important;
+}
+a:hover {
+    color: #9C231E !important;
+}
 
 	html.is-loading body *, html.is-loading body *:before, html.is-loading body *:after {
 		-moz-animation: none !important;
