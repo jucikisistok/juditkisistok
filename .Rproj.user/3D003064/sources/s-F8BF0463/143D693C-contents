@@ -36,7 +36,7 @@ googleAnalytics = ""
   # If this param is set to true, every section gets an own background image (located at static/images)
   # to change the image you could use the param picture on every section.
   # If it's disabled you could change the background to overwrite the bg.png and overlay.png to set the background.
-  backgroundpersection = true
+  backgroundpersection = false
 
   # hero Section
   [params.hero]
@@ -53,7 +53,7 @@ googleAnalytics = ""
     description = "I am a bioengineer-turned-bioinformatician teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I'm a huge fan of good data visualization, strong coffee, weird movies and terrible puns."
     buttontext = "next"
     # the picture is storead at static/images/
-    picture = "pic01.jpg"
+    picture = "bg.jpg"
 
   # skill section
   [[params.block]]
@@ -122,7 +122,7 @@ googleAnalytics = ""
     id = "contact"
     type = "contact"
     title = "Get in Touch with me"
-    description = "or check out my <a href='https://www.linkedin.com/in/judit-kisistok/' target='_blank'>Linkedin page</a>"
+    description = "or check out my <a href='https://www.linkedin.com/in/judit-kisistok/' target='_blank'>LinkedIn page</a>"
     picture = "pic05.jpg"
 
     [params.block.form]
