@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://www.example.com"
+baseurl = "https://www.judit.netlify.com/"
 languageCode = "en-us"
 title = "Highlights"
 theme = "hugo-highlights-theme"
