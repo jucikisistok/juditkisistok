@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "//www.judit.co"
+baseurl = "//www.judit.co/"
 languageCode = "en-us"
 title = "Judit Kisistók"
 theme = "hugo-highlights-theme"
