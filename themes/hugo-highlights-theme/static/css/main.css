@@ -1312,7 +1312,7 @@
 	html {
 		background-color: #313a3d;
 		background-attachment: fixed,						fixed;
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-image: url("images/overlay.png"), url("images/sky.jpg") !important;
 		background-position: top left,					center center;
 		background-repeat: repeat,						none;
 		background-size: auto,						cover;
@@ -2546,7 +2546,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #8cd1a8;
+			background-color: #1a2a5a;
 			border: 0;
 			box-shadow: none;
 			color: #ffffff !important;
@@ -2557,7 +2557,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #9ed8b6;
+				background-color: #303f6a;
 			}
 
 			input[type="submit"].special:active,
@@ -2565,7 +2565,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #7aca9a;
+				background-color: #1a2a5a;
 			}
 
 			input[type="submit"].special.icon:before,
