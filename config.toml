@@ -42,7 +42,7 @@ googleAnalytics = "UA-119946999-2"
   [params.hero]
     type = "hero"
     title = "Hi, my name is Judit"
-    description = "I am a bioinformatician interested in machine learning and data analysis"
+    description = "I am a data scientist interested in machine learning and cancer research"
     buttontext = "get to know me"
 
   # about section
@@ -50,7 +50,7 @@ googleAnalytics = "UA-119946999-2"
     id = "about"
     type = "custom"
     title = "Me in a nutshell"
-    description = "I am a bioengineer-turned-bioinformatician teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I'm a huge fan of good data visualization, strong coffee, weird movies and terrible puns."
+    description = "I am a bioengineer-turned-data scientist teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I'm a huge fan of good data visualization, strong coffee, weird movies and terrible puns."
     buttontext = "next"
     # the picture is storead at static/images/
     picture = "sky.jpg"

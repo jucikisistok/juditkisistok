@@ -49,7 +49,7 @@
       <header class="major">
         <h2>Me in a nutshell</h2>
       </header>
-        <img src="/images/profile.jpg" width = 50%;/>
+        <img src="images/profile.jpg" width = 50%;/>
       <p>I am a bioengineer-turned-data scientist teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I&rsquo;m a huge fan of good data visualization, strong coffee, weird movies and terrible puns.</p>
     </div>
     

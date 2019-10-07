@@ -22,7 +22,23 @@
   Sitemaps         |  1  
   Cleaned          |  0  
 
-Total in 2128 ms
+Total in 159 ms
+"
+"1","[?25lBuilding sites … "
+"1","[?25h[K
+"
+"1","                   | EN  
++------------------+----+
+  Pages            |  9  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 52  
+  Processed images |  0  
+  Aliases          |  0  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Total in 125 ms
 "
 "0","blogdown::serve_site()"
 "1","[?25lBuilding sites … "
@@ -39,9 +55,11 @@ Total in 2128 ms
   Sitemaps         |  1  
   Cleaned          |  0  
 
-Total in 88 ms
+Total in 122 ms
 "
-"2","To stop the server, run servr::daemon_stop(""4452338408"") or restart your R session
+"2","createTcpServer: address already in use
 "
-"2","Serving the directory /Users/juci/Documents/GitHub/juditkisistok at http://127.0.0.1:4321//www.judit.co/
+"2","To stop the server, run servr::daemon_stop(""4452370936"") or restart your R session
+"
+"2","Serving the directory /Users/juci/Documents/GitHub/juditkisistok at http://127.0.0.1:6277//www.judit.co/
 "
