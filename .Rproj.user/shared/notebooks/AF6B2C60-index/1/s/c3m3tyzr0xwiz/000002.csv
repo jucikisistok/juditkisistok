@@ -16,47 +16,13 @@
   Pages            |  9  
   Paginator pages  |  0  
   Non-page files   |  0  
-  Static files     | 42  
+  Static files     | 52  
   Processed images |  0  
   Aliases          |  0  
   Sitemaps         |  1  
   Cleaned          |  0  
 
-Total in 97 ms
-"
-"1","[?25lBuilding sites … "
-"1","[?25h[K
-"
-"1","                   | EN  
-+------------------+----+
-  Pages            |  9  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 42  
-  Processed images |  0  
-  Aliases          |  0  
-  Sitemaps         |  1  
-  Cleaned          |  0  
-
-Total in 100 ms
-"
-"1","[?25lBuilding sites … "
-"1","[?25h[K
-"
-"1","                   |"
-"1"," EN  
-+------------------+----+
-  Pages            |  9  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 42  
-  Processed images |  0  
-  Aliases          |  0  
-  Sitemaps         |  1"
-"1","  
-  Cleaned          |  0  
-
-Total in 93 ms
+Total in 2128 ms
 "
 "0","blogdown::serve_site()"
 "1","[?25lBuilding sites … "
@@ -67,15 +33,15 @@ Total in 93 ms
   Pages            |  9  
   Paginator pages  |  0  
   Non-page files   |  0  
-  Static files     | 42  
+  Static files     | 52  
   Processed images |  0  
   Aliases          |  0  
   Sitemaps         |  1  
   Cleaned          |  0  
 
-Total in 98 ms
+Total in 88 ms
 "
-"2","Serving the directory /Users/juci/Documents/GitHub/juditkisistok at http://127.0.0.1:6804//www.judit.co/
+"2","To stop the server, run servr::daemon_stop(""4452338408"") or restart your R session
 "
-"2","To stop the server, run servr::daemon_stop(""4326046456"") or restart your R session
+"2","Serving the directory /Users/juci/Documents/GitHub/juditkisistok at http://127.0.0.1:4321//www.judit.co/
 "
