@@ -1,0 +1,222 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+setwd("/Users/juci/desktop")
+library(tidyverse)
+
+mads13 = read.csv("mads_13.csv", sep = ";")
+win13 = rep(13, nrow(mads13))
+
+mads13 = mads13 %>%
+  add_column(win13)
+
+mads17 = read.csv("mads_17.csv", sep = ";")
+win17 = rep(17, nrow(mads13))
+
+mads17 = mads17 %>%
+  add_column(win17)
+
+mads21 = read.csv("mads_21.csv", sep = ";")
+win21 = rep(21, nrow(mads21))
+
+mads21 = mads21 %>%
+  add_column(win21)
+
+mads7 = read.csv("mads_7.csv", sep = ";")
+win7 = rep(7, nrow(mads7))
+
+mads7 = mads7 %>%
+  add_column(win7)
+
+mean(mads7$val_accuracy_2-mads7$val_accuracy)*100
+
+dat1 = aggregate(mads$val_accuracy_2~mads$window, FUN=mean)
+dat2 = aggregate(mads$val_accuracy~mads$window, FUN=mean)
+
+(mean(dat1$`mads$val_accuracy_2`-dat2$`mads$val_accuracy`))*100
+```
+
+```{r}
+#mads13 = mads[mads$X...window_size==13,]
+#mads17 = mads[mads$X...window_size==17,]
+#mads21 = mads[mads$X...window_size==21,]
+
+mads13_plot = mads13 %>%
+  select(nodes1 = X...nodes1, nodes2, batch_size,val_accuracy, val_accuracy_2, window = win13)
+
+mads17_plot = mads17 %>%
+  select(nodes1 = X...nodes1, nodes2, batch_size,val_accuracy, val_accuracy_2, window = win17)
+
+mads21_plot = mads21 %>%
+  select(nodes1 = X...nodes1, nodes2, batch_size,val_accuracy, val_accuracy_2, window = win21)
+
+mads7_plot = mads7 %>%
+  select(nodes1 = nodes1, nodes2, batch_size,val_accuracy, val_accuracy_2, window = win7)
+
+
+mads = bind_rows(mads7_plot, mads13_plot, mads17_plot, mads21_plot)
+aggregate(mads$val_accuracy_2~mads$window, FUN=mean)
+
+
+
+library(plotly)
+plot = plot_ly() %>%
+  add_trace(mads7_plot, x = mads7_plot$nodes1, y = mads7_plot$nodes2, z = mads7_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 7") %>%
+  add_trace(mads13_plot, x = mads13_plot$nodes1, y = mads13_plot$nodes2, z = mads13_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 13") %>%
+  add_trace(mads17_plot, x = mads17_plot$nodes1, y = mads17_plot$nodes2, z = mads17_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 17") %>%
+  add_trace(mads21_plot, x = mads21_plot$nodes1, y = mads21_plot$nodes2, z = mads21_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 21") %>%
+  layout(showlegend = TRUE) %>%
+  layout(legend = list(x = 100, y = 0.5))
+
+Sys.setenv("plotly_username"="jucikisistok")
+Sys.setenv("plotly_api_key"="3b8vKmsXzU9fs0eKhrph")
+
+chart_link = api_create(plot, filename="mads_nodebatch")
+newdata <- mads13[order(mads13$val_accuracy_2),] 
+
+mads13_batch = mads13 %>%
+  select(batch_size, X...nodes1, val_accuracy_2)
+
+plot = plot_ly() %>%
+  add_trace(mads13_batch, x = mads13_batch$batch_size, y = mads13_batch$X...nodes1, z = mads13_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 13") %>%
+  add_trace(mads17_batch, x = mads17_batch$batch_size, y = mads17_batch$X...nodes1, z = mads17_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 17") %>%
+  add_trace(mads21_batch, x = mads21_batch$batch_size, y = mads21_batch$X...nodes1, z = mads21_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 21")
+
+ggplot(mads13) +
+  geom_line(mapping = aes(x = batch_size, y = val_accuracy_2))
+
+
+
+
+bynode1 <-aggregate(mads, by=list(mads$nodes1, mads$window), 
+  FUN=mean, na.rm=TRUE)
+bybatch <-aggregate(mads, by=list(mads$nodes2, mads$window), 
+  FUN=mean, na.rm=TRUE)
+bybatch <-aggregate(mads, by=list(mads$batch_size, mads$window), 
+  FUN=mean, na.rm=TRUE)
+
+ggplot() +
+  geom_line(mapping = aes(x = bybatch$batch_size, y = bybatch$val_accuracy_2)) 
+
+ggplot() +
+  geom_line(mapping = aes(x = unique(mads13$nodes1), y = mads13$val_accuracy_2), color = "green") +
+  geom_line(mapping = aes(x = mads13$nodes2, y = mads13$val_accuracy_2), color = "red") +
+  geom_line(mapping = aes(x = mads13$batch_size, y = mads13$val_accuracy_2), color = "blue") 
+```
+
+```{r}
+mads2 = mads %>%
+  select(window, nodes1, nodes2, batch_size, val_accuracy_2)
+
+mads2$val_accuracy_2 = mads2$val_accuracy_2*100
+
+bybatch <-aggregate(mads2, by=list(mads2$batch_size, mads2$window), 
+  FUN=mean, data = mads2$val_accuracy_2, na.rm=TRUE)
+
+bynode1_p = ggplot(mapping = aes(x = bybatch$batch_size, y = bybatch$val_accuracy_2, colour=factor(bybatch$window))) +
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  xlab("Number of nodes in the first neural network") +
+  ylab("Validation accuracy") +
+  geom_vline(aes(xintercept=10), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=64.31240), colour="blue", linetype="dashed") 
+bynode1_p$labels$colour <- "Window size"
+bynode1_p + guides(fill=FALSE)
+
+ggsave("mads_bynode1.png", plot = bynode1_p)
+
+bynode1 <-aggregate(mads2, by=list(mads2$nodes1, mads2$window), 
+  FUN=mean, na.rm=TRUE)
+
+bynode2_p = ggplot(mapping = aes(x = bynode1$nodes1, y = bynode1$val_accuracy_2, colour=factor(bynode1$window))) +
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  xlab("Number of nodes in the second neural network") +
+  ylab("Validation accuracy")  +
+  geom_vline(aes(xintercept=100), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=64.50175), colour="blue", linetype="dashed") 
+bynode2_p$labels$colour <- "Window size"
+ggsave("mads_bynode2.png", plot = bynode2_p)
+
+bynode2 <-aggregate(mads2, by=list(mads2$nodes2, mads2$window), 
+  FUN=mean, na.rm=TRUE)
+
+bybatch_p = ggplot(mapping = aes(x = bynode2$nodes2, y = bynode2$val_accuracy_2, colour=factor(bynode2$window))) +
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  xlab("Batch size") +
+  ylab("Validation accuracy") +
+  geom_vline(aes(xintercept=200), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=64.54691), colour="blue", linetype="dashed") 
+bybatch_p$labels$colour <- "Window size"
+ggsave("mads_bybatch.png", plot = bybatch_p)
+
+#grid.arrange(bynode1_p, bynode2_p, bybatch_p, nrow = 2)
+
+
+```
+
+```{r}
+mads3 = arrange(mads2, desc(val_accuracy_2))
+```
+
+```{r}
+setwd("/Users/juci/desktop")
+
+madsreg = read.csv("madsreg.csv", sep = ";")
+```
+
+```{r}
+ggplot() +
+  geom_point(mapping = aes(x = madsreg$regularizer, y = madsreg$val_accuracy_2, colour=factor(madsreg$X...params)))   
+
+plot = plot_ly() %>%
+  add_trace(madsreg, x = madsreg$regularizer, y = madsreg$optimizer, z = madsreg$val_accuracy_2, type = "mesh3d", name = "Window size = 13") %>%
+  add_trace(mads17_batch, x = mads17_batch$batch_size, y = mads17_batch$X...nodes1, z = mads17_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 17") %>%
+  add_trace(mads21_batch, x = mads21_batch$batch_size, y = mads21_batch$X...nodes1, z = mads21_plot$val_accuracy_2, type = "mesh3d", name = "Window size = 21")
+
+```
+
+```{r}
+setwd("/Users/juci/Desktop/")
+madslayer <- read.csv("madslayer.csv", header = T, sep = ";")
+
+madslayerfail <- madslayer[0:7, ]
+madslayerfail$num_layers = madslayerfail$num_layers +1
+madslayerfail$val_accuracy_2 = madslayerfail$val_accuracy_2 *100
+
+setwd("/Users/juci/Desktop/NN/cluster")
+madslayerfail <- read.table("madslayer.txt", header = T, sep = "\t")
+
+
+fail = ggplot(madslayerfail, mapping = aes(x = madslayerfail$num_layers, y = madslayerfail$accuracy, colour = factor(madslayerfail$Type))) +
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  ylim(57, 66) +
+  ylab("Validation accuracy") +
+  xlab("Number of hidden layers") 
+fail$labels$colour <- "Type"
+
+  ggsave("mads_layers.png", plot = fail)
+  getwd()
+```
+
+
+```{r}
+setwd("/Users/juci/Desktop/")
+madscv <- read.table("madscv.txt", header = T)
+
+ggplot(mapping = aes(x = madscv$k, y = madscv$accuracy))+
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  ylim(c(62,67))+
+  geom_vline(aes(xintercept=5), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=66.23459), colour="blue", linetype="dashed") +
+  ylab("Validation accuracy") +
+  xlab("K-fold") +
+  ggsave("madscv.png")
+```
+

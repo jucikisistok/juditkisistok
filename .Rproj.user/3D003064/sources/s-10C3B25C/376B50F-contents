@@ -1,0 +1,9 @@
+library(ggplot2)
+setwd("/Volumes/Noor/Aarhus University/Semester 4/msa/msa_jens_cv")
+data_2=read.csv("workbook1_cv.csv")
+
+ggplot(data_2, aes(y=data_2$Mean.accuracy, x = data_2$Kfold)) + 
+  geom_line() + geom_point() + labs(x = "K-fold",y = "Validation accuracy") + ylim(55,67) +
+  geom_vline(aes(xintercept=5), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=66.2485544249943), colour="blue", linetype="dashed") 
+

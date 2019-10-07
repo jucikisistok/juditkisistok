@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<!--
+	Highlights by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Judit Kisistók</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content=" Machine Learning | Data Science | Python | R ">
+<meta name="author" content=" Judit Kisistók ">
+<meta name="generator" content="Hugo 0.36" />
+<!-- [if lte IE 8 ]]> <script src="//www.judit.co/js/ie/html5shiv.js"></script><![endif] -->
+<link rel="stylesheet" href="//www.judit.co/css/main.css" />
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-119946999-2', 'auto');
+ga('send', 'pageview');
+</script>
+<!--[if lte IE 8]><link rel="stylesheet" href="//www.judit.co/css/ie8.css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="//www.judit.co/css/ie9.css" /><![endif]-->
+
+
+	</head>
+	<body>
+		
+		<!-- header -->
+<section id="header">
+  <header class="major 1">
+    <h1> Hi, my name is Judit </h1>
+    <p> I am a bioinformatician interested in machine learning and data analysis </p>
+  </header>
+  <div class="container">
+    <ul class="actions">
+      
+        <li><a href="#about" class="button special scrolly">get to know me</a></li>
+      
+    </ul>
+  </div>
+</section>
+
+		
+			
+			
+			
+				<!-- about -->
+<section id="about" class="main special">
+  <div class="container">
+    
+    <div class="content">
+      <header class="major">
+        <h2>Me in a nutshell</h2>
+      </header>
+        <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/29354308_10215116520848305_4377402653395945396_o.jpg?_nc_cat=0&oh=8d0cf38d8578e4b617761594b297423d&oe=5B78CD2E" width = 50%;/>
+      <p>I am a bioengineer-turned-bioinformatician teaching computers data-driven magic tricks. I am deeply fascinated by the possibilities that the analysis of Big Data and the evolution of AI have to offer and I am interested in utilizing data analysis and machine learning to make a positive impact on the world. <br /><br />I&rsquo;m a huge fan of good data visualization, strong coffee, weird movies and terrible puns.</p>
+    </div>
+    
+      <a href="#skills" class="goto-next scrolly">next</a>
+    
+  </div>
+</section>
+
+			
+			
+		
+			
+			
+			
+				<!-- skills -->
+<section id="skills" class="main special">
+  <div class="container">
+    
+    <div class="content">
+      <header class="major">
+        <h2>My toolbox</h2>
+      </header>
+      <p>These are some of the wonderful things I have experience in.</p>
+      <ul class="icons-grid">
+        
+          <li>
+            <span class="icon major fa-code"></span>
+            <h3>Python programming</h3>
+          </li>
+        
+          <li>
+            <span class="icon major fa-code"></span>
+            <h3>R &amp; tidyverse</h3>
+          </li>
+        
+          <li>
+            <span class="icon major fa-pencil"></span>
+            <h3>Latex for scientific writing</h3>
+          </li>
+        
+          <li>
+            <span class="icon major fa-terminal"></span>
+            <h3>Plink for analyzing genome data</h3>
+          </li>
+        
+          <li>
+            <span class="icon major fa-tree"></span>
+            <h3>Mega for building phylogenetic trees</h3>
+          </li>
+        
+          <li>
+            <span class="icon major fa-coffee"></span>
+            <h3>Teaching</h3>
+          </li>
+        
+      </ul>
+    </div>
+    
+      <a href="#projects" class="goto-next scrolly">next</a>
+    
+  </div>
+</section>
+
+			
+			
+		
+			
+			
+			
+				<!-- projects -->
+<section id="projects" class="main special">
+  <div class="container">
+    
+    <div class="content">
+      <header class="major">
+        <h2>Cool stuff I&rsquo;ve done</h2>
+      </header>
+      <p><h3>Being a teaching assistant</h3>I had a fantastic time teaching 20+ lovely molecular biology BSc students in the fall of 2017 and spring of 2018. The fall course involved python programming and using online bioinformatics tools (like BLAST), while the spring course focused on statistics and R. To help my students understand the concepts more, I prepared extra materials for them that you can see here:<br /><a href='https://github.com/jucikisistok/biap' target='_blank'>Bioinformatics and Programming course notes</a><br /><a href='https://gaos.netlify.com/' target='_blank'>Genome Analysis and Statistics notebooks</a><br /><br />Here are some kind words my previous students wrote about me (no bribes involved):<br /><br /><blockquote>Judit has been an excellent TA - she has always been good at communicating what we couldn&rsquo;t understand from the lectures and helping us with tasks and especially R.<br /><br />[The best thing about the course was] Judit! Her Kahoots and way to teach has been so good. <br /><br />Judit is a lovely lady who under no circumstances should leave the TA position.</blockquote><br /><h3>Co-creating muggerNN</h3>As part of our Master&rsquo;s thesis, my dear friend and thesis partner, Noor and me implemented a command-line tool to predict protein secondary structure that we lovingly called muggerNN (working title). Not only did we get pretty good at implementing different kinds of neural networks in Keras (from simple one-layer to deep convolutional nets), we also learnt a lot about data wrangling, cluster computing, patience, teamwork and time management.</p>
+    </div>
+    
+      <a href="#contact" class="goto-next scrolly"></a>
+    
+  </div>
+</section>
+
+			
+			
+		
+			
+			
+				<!-- Footer -->
+				<section id="footer">
+			
+			
+				<!-- contact -->
+<section id="contact" class="main special">
+  <div class="container">
+    
+    <div class="content">
+      <header class="major">
+        <h2>Get in Touch with me</h2>
+      </header>
+      <p>or check out my <a href='https://www.linkedin.com/in/judit-kisistok/' target='_blank'>LinkedIn page</a></p>
+      <form method="post" action="//formspree.io/judit.kisistok@gmail.com">
+        <div class="row uniform">
+          <div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
+          <div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email" /></div>
+          <div class="12u$"><textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea></div>
+          <div class="12u$">
+            <ul class="actions">
+              <li><input type="submit" value="send message" class="special" /></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+</section>
+
+			
+			
+					
+						<footer>
+  <ul class="icons">
+    
+      <li><a href="https://www.linkedin.com/in/judit-kisistok/" class="icon alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+    
+      <li><a href="mailto:judit.kisistok@gmail.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+    
+  </ul>
+  <ul class="copyright">
+    
+      <li>© Judit Kisistók</li>
+    
+      <li>Design: <a href="//html5up.net">HTML5UP</a></li>
+    
+      <li>Photo by <a href="//unsplash.com/@federize">Federico Beccari</a> on <a href="//unsplash.com/">Unsplash</a></li>
+    
+  </ul>
+</footer>
+
+					
+				</section>
+			
+		
+
+		<!-- Scripts -->
+<script src="//www.judit.co/js/jquery.min.js"></script>
+<script src="//www.judit.co/js/jquery.scrollex.min.js"></script>
+<script src="//www.judit.co/js/jquery.scrolly.min.js"></script>
+<script src="//www.judit.co/js/skel.min.js"></script>
+<script src="//www.judit.co/js/util.js"></script>
+<!-- [if lte IE 8 ]]> <script src="//www.judit.co/js/ie/respond.min.js"></script><![endif] -->
+<script src="//www.judit.co/js/main.js"></script>
+
+
+
+	</body>
+</html>

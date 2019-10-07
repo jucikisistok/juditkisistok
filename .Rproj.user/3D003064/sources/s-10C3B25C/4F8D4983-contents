@@ -1,0 +1,143 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+REGULARIZER EXPERIMENTS
+
+```{r}
+setwd("/Users/juci/desktop")
+
+sorenreg = read.csv("soren_reg.csv", sep = ";")
+
+sorenreg$regularizer = as.factor(sorenreg$regularizer)
+factor(sorenreg$regularizer)
+
+ggplot() +
+  geom_point(mapping = aes(x = sorenreg$regularizer, y = sorenreg$val_accuracy, colour=factor(sorenreg$X...window)))
+
+?mean
+factors = factor(sorenreg$X...window)
+sorenreg$X...window = factors
+mean(sorenreg$val_accuracy)
+
+aggregate(sorenreg$val_accuracy~sorenreg$X...window, FUN=mean)
+
+```
+
+Result: window size 21, L1 + dropout
+
+
+BATCH AND NODE EXPERIMENTS
+
+```{r}
+setwd("/Users/juci/desktop")
+library(tidyverse)
+library(plotly)
+
+
+soren = read.csv("soren_nodebatch.csv", sep = ";")
+soren$val_accuracy = soren$val_accuracy * 100
+
+
+s13 = soren[soren$X...window == 13,]
+s17 = soren[soren$X...window == 17,]
+s21 = soren[soren$X...window == 21,]
+
+mean(s13$val_accuracy)
+mean(s17$val_accuracy)
+mean(s21$val_accuracy)
+
+```
+
+
+```{r}
+plot = plot_ly() %>%
+  add_trace(s13, x = s13$nodes1, y = s13$nodes2, z = s13$val_accuracy, type = "mesh3d", name = "Window size = 13", showlegend = TRUE, legendgroup = "jkhsfjahsk") %>%
+  add_trace(s17, x = s17$nodes1, y = s17$nodes2, z = s17$val_accuracy, type = "mesh3d", name = "Window size = 17") %>%
+  add_trace(s21, x = s21$nodes1, y = s21$nodes2, z = s21$val_accuracy, type = "mesh3d", name = "Window size = 21")
+
+Sys.setenv("plotly_username"="jucikisistok")
+Sys.setenv("plotly_api_key"="3b8vKmsXzU9fs0eKhrph")
+
+chart_link = api_create(plot, filename="soren_nodebatch")
+
+plot
+```
+
+```{r}
+
+bybatch <-aggregate(soren, by=list(soren$batch_size, soren$X...window), 
+  FUN=mean, data = soren$val_accuracy, na.rm=TRUE)
+
+bybatch_p = ggplot(mapping = aes(x = bybatch$batch_size, y = bybatch$val_accuracy, colour=factor(bybatch$X...window))) +
+  geom_line(lwd = 0.9)  + 
+  geom_point() +
+  xlab("Batch size") +
+  ylab("Validation accuracy") +
+  geom_vline(aes(xintercept=1000), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=81.90391), colour="blue", linetype="dashed")
+bybatch_p$labels$colour <- "Window size"
+ggsave("bybatch.png", plot = bybatch_p)
+
+
+bynode1 <-aggregate(soren, by=list(soren$nodes1, soren$X...window), 
+  FUN=mean, na.rm=TRUE)
+
+bynode1_p = ggplot(mapping = aes(x = bynode1$nodes1, y = bynode1$val_accuracy, colour=factor(bynode1$X...window))) +
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  xlab("Number of filters in the first convolutional layer") +
+  ylab("Validation accuracy")+
+  geom_vline(aes(xintercept=96), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=81.91859), colour="blue", linetype="dashed")
+bynode1_p$labels$colour <- "Window size"
+ggsave("soren_bynode1.png", plot = bynode1_p)
+
+bynode2 <-aggregate(soren, by=list(soren$nodes2, soren$X...window), 
+  FUN=mean, na.rm=TRUE)
+
+bynode2_p = ggplot(mapping = aes(x = bynode2$nodes2, y = bynode2$val_accuracy, colour=factor(bynode2$X...window))) +
+  geom_line() +
+  geom_point() +
+  xlab("Number of filters in the second convolutional layer") +
+  ylab("Validation accuracy")+
+  geom_vline(aes(xintercept=10), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=82.10495), colour="blue", linetype="dashed")
+bynode2_p$labels$colour <- "Window size"
+ggsave("soren_bynode2.png", plot = bynode2_p)
+
+```
+```{r}
+sorenopti <- read.table("sorenopti.txt", sep = "\t", header = T)
+
+byfilt1 <- aggregate(sorenopti, by=list(sorenopti$filter1), FUN = mean, na.rm = T)
+byfilt2 <- aggregate(sorenopti, by=list(sorenopti$filter2), FUN = mean, na.rm = T)
+byopti <- aggregate(sorenopti, by=list(sorenopti$optimizer), FUN = mean, na.rm = T)
+
+ggplot() +
+  geom_point(mapping = aes(x = byfilt1$Group.1, y = byfilt1$val_accuracy), col = "red") + 
+  geom_point(mapping = aes(x = byfilt2$Group.1, y = byfilt2$val_accuracy), col = "blue") +
+  geom_point(mapping = aes(x = byopti$Group.1, y = byopti$val_accuracy)) 
+
+plot_ly() %>%
+  add_trace(sorenopti, x = sorenopti$filter1, y = sorenopti$filter2, z = sorenopti$val_accuracy, type = "mesh3d", name = "Window size = 13", showlegend = TRUE, legendgroup = "jkhsfjahsk") %>%
+  add_trace(s17, x = s17$nodes1, y = s17$nodes2, z = s17$val_accuracy, type = "mesh3d", name = "Window size = 17") %>%
+  add_trace(s21, x = s21$nodes1, y = s21$nodes2, z = s21$val_accuracy, type = "mesh3d", name = "Window size = 21")
+```
+
+```{r}
+setwd("/Users/juci/Desktop/NN/cluster")
+sorencv <- read.table("sorencv.txt", header = T)
+
+ggplot(mapping = aes(x = sorencv$k, y = sorencv$accuracy))+
+  geom_line(lwd = 0.9) +
+  geom_point() +
+  ylim(c(75,85))+
+  geom_vline(aes(xintercept=5), colour="blue", linetype="dashed") + 
+  geom_hline(aes(yintercept=83.56373), colour="blue", linetype="dashed") +
+  ylab("Validation accuracy") +
+  xlab("K-fold") +
+  ggsave("sorencv.png")
+```
+
